@@ -15,7 +15,8 @@ class Actions
 
   def announce_winners(winners)
     puts "The mTurkCode of the winners are:"
-    puts winners
+    winners.each { |winner|
+      puts winner[:m_turk_code] }
   end
 
   def get_user_input

@@ -35,7 +35,7 @@ module Raffle
       @raw_tickets.each { |entrant|
         unless entrant[:status] =="ineligible"
           entrant[:ticket_total].times {
-            @all_tickets.push(entrant[:m_turk_code])
+            @all_tickets.push(entrant)
           }
         end
       }
@@ -46,18 +46,26 @@ module Raffle
     def pick_winners(number_of_winners)
       @winners = []
       number_of_winners.times do
-        winner_id = grab_from_hat
-        @winners.push(winner_id)
+        winner = grab_from_hat
+        @winners.push(winner)
       end
       @winners
     end
 
     def grab_from_hat
-      winner_id = @all_tickets.sample
-      if @winners.include?(winner_id)
+      winner = @all_tickets.sample
+      if disqualified?(winner)
         grab_from_hat
       end
-      winner_id
+      winner
+    end
+
+    private
+
+    def disqualified?(entrant)
+      @winners.any? { |winner|
+        winner.has_value?(entrant[:m_turk_code]) || winner.has_value?(entrant[:ip_address])
+      }
     end
   end
 end
