@@ -1,6 +1,7 @@
 require_relative 'raffle.rb'
 require_relative 'command_line_style.rb'
 require_relative 'actions.rb'
+require 'byebug'
 
 style   = CmdStyle.new()
 actions = Actions.new()
