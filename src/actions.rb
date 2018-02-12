@@ -4,7 +4,8 @@ class Actions
   end
 
   def get_file_name
-    puts "Please type the file location"
+    puts "Please make sure the file is in the src folder and is a csv."
+    puts "What is the name of the file?"
     get_user_input
   end
 
