@@ -1,4 +1,6 @@
-# A very specific lottery picker that Sam needed for his study
+# A very specific raffle picker that Sam needed for his study
+
+## You are welcome Sam
 
 ### To run
 
