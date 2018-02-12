@@ -23,6 +23,8 @@
 * In the terminal, from `src` run `ruby runner.rb`
 * Program will prompt you for the file name and number of winners and should output the corresponding winners mTurkCode
 
+---
+
 ### Troubleshooting
 
 * I get an error: `ruby: No such file or directory -- runner.rb (LoadError)`
